@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: #fff;
   color: #333;
   text-align: center;
@@ -17,7 +17,7 @@ header {
 
 header .logo {
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 nav a {
@@ -30,7 +30,7 @@ nav .btn {
   background: #ffb300;
   padding: 8px 12px;
   border-radius: 5px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 main {
@@ -80,7 +80,7 @@ textarea {
   display: block;
   margin-top: 25px;
   color: #6a1b9a;
-  font-weight: bold;
+  font-weight: 700;
   text-decoration: none;
 }
 
@@ -92,4 +92,36 @@ textarea {
   padding: 8px 15px;
   border-radius: 20px;
   text-decoration: none;
+}
+
+/* Popup Styles */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #fff;
+  width: 80%;
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
 }
