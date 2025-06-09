@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PiNet Unlock</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="Style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <img src="https://ik.imagekit.io/digitalmake/Pi.jpg?updatedAt=1749459936327" alt="PiNet Logo" width="150">
-    <div class="logo">🟠 PiNet</div>
+    <div class="logo">
+      <img src="https://ik.imagekit.io/digitalmake/Pi.jpg?updatedAt=1749459936327" alt="PiNet Logo" width="150">
+      <h1>🟠 PiNet</h1>
+    </div>
     <nav>
       <a href="#">Home</a>
       <a href="#" class="btn">Download the Pi browser.</a>
@@ -17,24 +17,46 @@
   </header>
 
   <main>
-    <div class="logo-big">π</div>
-    <h2>Locked Pi Unlock Event <strong>Celebrating the 6th Anniversary and Mainnet Launch</strong></h2>
-    <p class="desc">
-      As a token of appreciation... for pioneers who have supported the project over the past 6 years.
-    </p>
-    <h3>Mainnet Unlock π</h3>
-    <ul class="status">
-      <li>⚡ Time remaining: <span id="timer">Loading...</span></li>
-      <li>✔ Requirement: KYC successfully completed</li>
-      <li>📶 Remaining slots: 218 out of 31,415</li>
-    </ul>
-    <textarea placeholder="Enter your 24-character password here..."></textarea>
-    <button class="unlock-btn">UNLOCK LOCKED PI WITH A PASSPHRASE</button>
-    <p class="note">
-      Note: Each wallet can only register for unlocking once. Priority is given to pioneers...
-    </p>
-    <a href="#" class="policy">Privacy Policy</a>
-    <a href="#" class="footer-btn">🔍 Explore the ecosystem.</a>
+    <section>
+      <h1 class="logo-big">π</h1>
+      <h2>Locked Pi Unlock Event Celebrating the 6th Anniversary and Mainnet Launch</h2>
+      <p>As a token of appreciation... for pioneers who have supported the project over the past 6 years.</p>
+    </section>
+
+    <section>
+      <h1>Mainnet Unlock π</h1>
+      <button class="unlock-btn" onclick="showPopup()">Show Mainnet Unlock Details</button>
+      <ul class="status">
+        <li>⚡ Time remaining: <span id="timer">Loading...</span></li>
+        <li>✔ Requirement: KYC successfully completed</li>
+        <li>📶 Remaining slots: 218 out of 31,415</li>
+      </ul>
+    </section>
+
+    <section>
+      <h1>UNLOCK LOCKED PI WITH A PASSPHRASE</h1>
+      <textarea placeholder="Enter your passphrase"></textarea>
+      <button class="unlock-btn">Unlock</button>
+      <p class="note">Note: Each wallet can only register for unlocking once. Priority is given to pioneers...</p>
+    </section>
+
+    <!-- Popup for Mainnet Unlock -->
+    <div id="unlockPopup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="hidePopup()">&times;</span>
+        <h1>Mainnet Unlock π</h1>
+        <ul class="status">
+          <li>⚡ Time remaining: <span id="popupTimer">Loading...</span></li>
+          <li>✔ Requirement: KYC successfully completed</li>
+          <li>📶 Remaining slots: 218 out of 31,415</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <a href="#" class="policy">Privacy Policy</a>
+      <a href="#" class="footer-btn">🔍 Explore the ecosystem.</a>
+    </footer>
   </main>
 
   <script src="script.js"></script>
