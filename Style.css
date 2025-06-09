@@ -65,13 +65,13 @@ textarea {
   font-size: 1rem;
   background: #fff;
   border: 2px solid #6a1b9a;
-  color: #6a1b9a; /* Purple text for the button */
+  color: #6a1b9a;
   border-radius: 6px;
   cursor: pointer;
 }
 
 .note {
-  font-size: 12px; /* Updated to 12px as requested */
+  font-size: 12px;
   margin-top: 15px;
   color: #555;
 }
@@ -128,8 +128,8 @@ textarea {
 
 /* Animation for Mainnet Unlock π heading */
 .animated-heading {
-  color: #FFC107; /* Deep yellow */
-  animation: upDown 2s infinite; /* Continuous up-down animation */
+  color: #FFC107;
+  animation: upDown 2s infinite;
 }
 
 @keyframes upDown {
@@ -137,6 +137,6 @@ textarea {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px); /* Moves up by 10px */
+    transform: translateY(-10px);
   }
 }
