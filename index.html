@@ -11,7 +11,7 @@
       <h1>PiNet</h1>
     </div>
     <nav>
-      <a href="#" class="btn" onclick="showDownloadPopup()">Download the Pi browser.</a>
+      <a href="#" class="btn" onclick="showDownloadPopup()">Download the Pi Browser</a>
     </nav>
   </header>
 
@@ -39,7 +39,7 @@
       <p class="note">Note: Each wallet can only register for unlocking once. Priority is given to pioneers who have supported the project for more than 2 years.</p>
     </section>
 
-    <!-- Mainnet Unlock Popup -->
+    <!-- Unlock Popup -->
     <div id="unlockPopup" class="popup">
       <div class="popup-content">
         <span class="close" onclick="hidePopup()">×</span>
@@ -52,14 +52,23 @@
       </div>
     </div>
 
-    <!-- Download Popup -->
+    <!-- Download Pi Browser Popup -->
     <div id="downloadPopup" class="popup">
-      <div class="popup-content">
+      <div class="popup-content download-popup">
         <span class="close" onclick="hideDownloadPopup()">×</span>
         <h2>Download Pi Browser</h2>
-        <p>Choose your platform:</p>
-        <a class="unlock-btn" href="https://play.google.com/store/apps/details?id=pi.browser" target="_blank">📱 Play Store</a><br><br>
-        <a class="unlock-btn" href="https://apps.apple.com/us/app/pi-browser/id1560911608" target="_blank">🍎 App Store</a>
+        <p class="desc">
+          The Pi Browser is the gateway to Pi’s Web3 app ecosystem where Pioneers engage with apps using their Pi account and transact with their Pi Wallet – it’s the sole platform for securely entering Pi Wallet passphrases.
+        </p>
+        <div class="store-buttons">
+          <a href="https://play.google.com/store/apps/details?id=pi.browser" target="_blank">
+            <img src="https://ik.imagekit.io/digitalmake/Google%20Play.png?updatedAt=1749554552679" alt="Google Play" class="store-logo">
+          </a>
+          <a href="https://apps.apple.com/us/app/pi-browser/id1560911608" target="_blank">
+            <img src="https://ik.imagekit.io/digitalmake/App%20Store.png?updatedAt=1749554552590" alt="App Store" class="store-logo">
+          </a>
+        </div>
+        <button class="popup-close-btn" onclick="hideDownloadPopup()">Close</button>
       </div>
     </div>
 
