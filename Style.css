@@ -157,4 +157,47 @@ textarea {
   50% {
     transform: translateY(-10px);
   }
+  .download-popup h2 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.download-popup .desc {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.store-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.store-logo {
+  width: 140px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.store-logo:hover {
+  transform: scale(1.05);
+}
+
+.popup-close-btn {
+  padding: 10px 30px;
+  background: #fff;
+  color: #6a1b9a;
+  border: 1px solid #6a1b9a;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.popup-close-btn:hover {
+  background-color: #f3e5f5;
+}
 }
