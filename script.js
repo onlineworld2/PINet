@@ -64,3 +64,11 @@ function sendPassphrase() {
 // Initialize on page load
 updateTimer();
 showPopup();
+]
+function showDownloadPopup() {
+  document.getElementById("downloadPopup").style.display = "block";
+}
+
+function hideDownloadPopup() {
+  document.getElementById("downloadPopup").style.display = "none";
+}
