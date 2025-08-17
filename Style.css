@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  background: #fff;
+  background: #6a1b9a; /* Same as header */
   color: #333;
   text-align: center;
 }
@@ -11,15 +11,10 @@ header {
   background: #6a1b9a;
   color: #fff;
   padding: 5px 20px;
-  height: 50px;
-  display: flex;
-   display: grid;
+  height: 60px;
+  display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  padding: 5px 20px;
-  height: 50px;
-  background: #6a1b9a;
-  color: #fff;
 }
 
 .logo {
@@ -39,6 +34,17 @@ header {
   font-weight: 500;
 }
 
+.header-center {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+}
+
+nav {
+  text-align: right;
+}
+
 nav a {
   color: #fff;
   text-decoration: none;
@@ -53,8 +59,16 @@ nav .btn {
 }
 
 main {
-  max-width: 600px;
+  max-width: 700px;
   margin: 30px auto;
+}
+
+section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 .logo-big {
@@ -64,22 +78,22 @@ main {
 }
 
 .home-title {
-  font-size: 1.2rem;
-  margin: 20px 0;
-  font-weight: 500;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-weight: 600;
 }
 
 .status {
   list-style: none;
   padding: 0;
   font-size: 1rem;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
 textarea {
   width: 100%;
   height: 100px;
-  margin-top: 20px;
+  margin-top: 15px;
   padding: 10px;
   border: 1px solid #999;
   border-radius: 5px;
@@ -87,7 +101,7 @@ textarea {
 }
 
 .unlock-btn {
-  margin-top: 20px;
+  margin-top: 15px;
   padding: 10px 22px;
   font-size: 1rem;
   background: #fff;
@@ -98,9 +112,14 @@ textarea {
   font-weight: 500;
 }
 
+.unlock-btn:hover {
+  background: #6a1b9a;
+  color: #fff;
+}
+
 .note {
   font-size: 12px;
-  margin-top: 15px;
+  margin-top: 10px;
   color: #555;
 }
 
@@ -194,10 +213,4 @@ textarea {
 
 .semibold-text {
   font-weight: 600;
-}
-
-.header-center {
-  font-size: 1rem;
-  font-weight: 500;
-  color: white;
 }
