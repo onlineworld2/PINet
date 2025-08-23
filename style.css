@@ -8,6 +8,18 @@ body {
   background: #fff;
   color: #222;
   line-height: 1.5;
+  display: flex;
+  justify-content: center;
+}
+
+/* App wrapper locked at 768px */
+.app {
+  width: 100%;
+  max-width: 768px;
+  background: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Header */
@@ -35,4 +47,42 @@ body {
   font-size: 18px;
   cursor: pointer;
 }
-.right { width: 30px; } /* ताकि Home बीच में perfect रहे */
+.right { width: 30px; } /* spacing for perfect centering */
+
+/* Main */
+.main { padding: 16px; display: flex; flex-direction: column; gap: 16px; }
+.center-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.logo-lg { height: 32px; }
+.welcome { font-size: 20px; font-weight: 600; color: var(--purple); }
+.unlock-icon { height: 28px; }
+.unlock-text { font-size: 16px; font-weight: 600; color: #222; }
+
+.input {
+  width: 100%;
+  min-height: 80px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.btn {
+  width: 100%;
+  background: var(--purple);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn:hover { background: #36005e; }
+
+.note { font-size: 14px; color: #444; }
+.note a { color: var(--purple); font-weight: 600; }
