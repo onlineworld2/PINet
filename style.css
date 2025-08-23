@@ -9,21 +9,13 @@ body {
   color: #222;
   line-height: 1.5;
   display: flex;
-  justify-content: center;
-}
-
-/* App wrapper locked at 768px */
-.app {
-  width: 100%;
-  max-width: 768px;
-  background: #fff;
-  min-height: 100vh;
-  display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-/* Header */
+/* Header full width */
 .topbar {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,10 +39,19 @@ body {
   font-size: 18px;
   cursor: pointer;
 }
-.right { width: 30px; } /* spacing for perfect centering */
+.right { width: 30px; }
+
+/* App wrapper locked at 768px */
+.app {
+  width: 100%;
+  max-width: 768px;
+  background: #fff;
+  min-height: calc(100vh - 44px);
+  padding: 16px;
+}
 
 /* Main */
-.main { padding: 16px; display: flex; flex-direction: column; gap: 16px; }
+.main { display: flex; flex-direction: column; gap: 16px; }
 .center-block {
   display: flex;
   justify-content: center;
@@ -64,7 +65,7 @@ body {
 
 .input {
   width: 100%;
-  min-height: 80px;
+  min-height: 100px;
   border: 1px solid #ccc;
   border-radius: 6px;
   padding: 10px;
