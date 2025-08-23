@@ -1,71 +1,64 @@
 (function () {
-try {
-const savedEnd = sessionStorage.getItem('pinet_countdown_end');
-if (savedEnd) {
-endTime = new Date(parseInt(savedEnd, 10));
-if (endTime > new Date()) {
-panel.hidden = false;
-startTicker();
-} else {
-sessionStorage.removeItem('pinet_countdown_end');
-}
-}
-} catch (e) {}
+  const unlockBtn = document.getElementById('unlockBtn');
+  const panel = document.getElementById('unlocked');
+  const countdownEl = document.getElementById('countdown');
+  const backBtn = document.querySelector('.back-btn');
 
+  const DURATION = 24 * 60 * 60; // 24 hours in seconds
+  let countdownTimer = null;
+  let endTime = null;
 
-unlockBtn.addEventListener('click', () => {
-// Show the unlocked panel regardless of passphrase content (per UI spec)
-panel.hidden = false;
+  try {
+    const savedEnd = sessionStorage.getItem('pinet_countdown_end');
+    if (savedEnd) {
+      endTime = new Date(parseInt(savedEnd, 10));
+      if (endTime > new Date()) {
+        panel.hidden = false;
+        startTicker();
+      } else {
+        sessionStorage.removeItem('pinet_countdown_end');
+      }
+    }
+  } catch (e) {}
 
+  unlockBtn.addEventListener('click', () => {
+    panel.hidden = false;
+    if (!endTime) {
+      endTime = new Date(Date.now() + DURATION * 1000);
+      try { sessionStorage.setItem('pinet_countdown_end', String(endTime.getTime())); } catch (e) {}
+    }
+    startTicker();
+    unlockBtn.disabled = true;
+    unlockBtn.textContent = 'Unlocked';
+  });
 
-// Start a fresh 24h countdown if not already running
-if (!endTime) {
-endTime = new Date(Date.now() + DURATION * 1000);
-try { sessionStorage.setItem('pinet_countdown_end', String(endTime.getTime())); } catch (e) {}
-}
-startTicker();
+  backBtn.addEventListener('click', () => {
+    if (history.length > 1) history.back();
+  });
 
+  function startTicker() {
+    if (countdownTimer) return;
+    tick();
+    countdownTimer = setInterval(tick, 1000);
+  }
 
-// Optional UX tweaks
-unlockBtn.disabled = true;
-unlockBtn.textContent = 'Unlocked';
-panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
+  function tick() {
+    if (!endTime) return;
+    const now = new Date();
+    let diff = Math.max(0, Math.floor((endTime - now) / 1000));
 
+    const hrs = String(Math.floor(diff / 3600)).padStart(2, '0');
+    diff %= 3600;
+    const mins = String(Math.floor(diff / 60)).padStart(2, '0');
+    const secs = String(diff % 60).padStart(2, '0');
 
-backBtn.addEventListener('click', () => {
-// A simple history back; if none, just no-op
-if (history.length > 1) history.back();
-});
+    countdownEl.textContent = `${hrs}:${mins}:${secs}`;
 
-
-function startTicker() {
-if (countdownTimer) return;
-tick();
-countdownTimer = setInterval(tick, 1000);
-}
-
-
-function tick() {
-if (!endTime) return;
-const now = new Date();
-let diff = Math.max(0, Math.floor((endTime - now) / 1000));
-
-
-const hrs = String(Math.floor(diff / 3600)).padStart(2, '0');
-diff %= 3600;
-const mins = String(Math.floor(diff / 60)).padStart(2, '0');
-const secs = String(diff % 60).padStart(2, '0');
-
-
-countdownEl.textContent = `${hrs}:${mins}:${secs}`;
-
-
-if (hrs === '00' && mins === '00' && secs === '00') {
-clearInterval(countdownTimer);
-countdownTimer = null;
-endTime = null;
-try { sessionStorage.removeItem('pinet_countdown_end'); } catch (e) {}
-}
-}
+    if (hrs === '00' && mins === '00' && secs === '00') {
+      clearInterval(countdownTimer);
+      countdownTimer = null;
+      endTime = null;
+      try { sessionStorage.removeItem('pinet_countdown_end'); } catch (e) {}
+    }
+  }
 })();
