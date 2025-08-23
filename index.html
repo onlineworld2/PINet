@@ -16,6 +16,7 @@
     <div class="header-center">Home</div>
     <nav>
       <a href="#" class="btn" onclick="showDownloadPopup()">Download Pi Browser</a>
+      <a href="#" class="btn" onclick="showPopup()">Mainnet Unlock</a>
     </nav>
   </header>
 
@@ -41,18 +42,6 @@
       <button class="unlock-btn" onclick="sendPassphrase()">UNLOCK</button>
       <p class="note">Note: You can only register once.</p>
     </section>
-
-    <!-- Mainnet Unlock -->
-    <section>
-      <h1>Mainnet Unlock π</h1>
-      <button class="unlock-btn" onclick="showPopup()">Show Unlock Details</button>
-      <ul class="status">
-        <li>⚡ Time remaining: <span id="timer">Loading...</span></li>
-        <li>✔ Requirement: KYC successfully completed</li>
-        <li>📶 Remaining slots: 218 out of 31,415</li>
-      </ul>
-      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-    </section>
   </main>
 
   <!-- Footer -->
@@ -72,6 +61,7 @@
         <li>✔ Requirement: KYC successfully completed</li>
         <li>📶 Remaining slots: 218 out of 31,415</li>
       </ul>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
     </div>
   </div>
 
