@@ -27,8 +27,6 @@ body {
 .topbar .logo {
   height: 24px;
 }
-.topbar a { color: #fff; text-decoration: none; font-weight: 600; }
-.topbar a:hover { text-decoration: underline; }
 .back-btn {
   background: transparent;
   border: none;
@@ -39,15 +37,16 @@ body {
 
 /* Main */
 .main { padding: 16px; display: flex; flex-direction: column; gap: 16px; }
-.row {
+.center-block {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 8px;
 }
 .logo-lg { height: 32px; }
-.welcome { font-size: 20px; font-weight: 600; }
+.welcome { font-size: 20px; font-weight: 600; color: var(--purple); }
 .unlock-icon { height: 28px; }
-.unlock-text { font-size: 16px; font-weight: 600; }
+.unlock-text { font-size: 16px; font-weight: 600; color: #222; }
 
 .input {
   width: 100%;
@@ -73,10 +72,3 @@ body {
 
 .note { font-size: 14px; color: #444; }
 .note a { color: var(--purple); font-weight: 600; }
-
-.card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 16px;
-  background: #f9f9f9;
-}
