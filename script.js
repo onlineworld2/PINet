@@ -2,7 +2,6 @@ const unlockBtn = document.getElementById("unlockBtn");
 const backBtn = document.querySelector(".back-btn");
 
 unlockBtn.addEventListener("click", () => {
-  // new unlocked page open in same tab
   window.location.href = "unlocked.html";
 });
 
