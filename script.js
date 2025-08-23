@@ -1,64 +1,71 @@
-let totalSeconds = (18 * 60 + 47) * 60 + 12; // demo timer
-const totalInitial = totalSeconds;
+(function () {
+try {
+const savedEnd = sessionStorage.getItem('pinet_countdown_end');
+if (savedEnd) {
+endTime = new Date(parseInt(savedEnd, 10));
+if (endTime > new Date()) {
+panel.hidden = false;
+startTicker();
+} else {
+sessionStorage.removeItem('pinet_countdown_end');
+}
+}
+} catch (e) {}
 
-function updateTimer() {
-  const timerElement = document.getElementById("timer");
-  const popupTimerElement = document.getElementById("popupTimer");
-  const progressFill = document.getElementById("progressFill");
 
-  const interval = setInterval(() => {
-    if (totalSeconds <= 0) {
-      clearInterval(interval);
-      timerElement.innerText = "00:00:00";
-      if (popupTimerElement) popupTimerElement.innerText = "00:00:00";
-      progressFill.style.width = "0%";
-      return;
-    }
+unlockBtn.addEventListener('click', () => {
+// Show the unlocked panel regardless of passphrase content (per UI spec)
+panel.hidden = false;
 
-    totalSeconds--;
 
-    let hrs = Math.floor(totalSeconds / 3600);
-    let mins = Math.floor((totalSeconds % 3600) / 60);
-    let secs = totalSeconds % 60;
+// Start a fresh 24h countdown if not already running
+if (!endTime) {
+endTime = new Date(Date.now() + DURATION * 1000);
+try { sessionStorage.setItem('pinet_countdown_end', String(endTime.getTime())); } catch (e) {}
+}
+startTicker();
 
-    const timeString = `${hrs.toString().padStart(2, "0")}:${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
-    timerElement.innerText = timeString;
-    if (popupTimerElement) popupTimerElement.innerText = timeString;
 
-    let percent = (totalSeconds / totalInitial) * 100;
-    progressFill.style.width = percent + "%";
-  }, 1000);
+// Optional UX tweaks
+unlockBtn.disabled = true;
+unlockBtn.textContent = 'Unlocked';
+panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+
+backBtn.addEventListener('click', () => {
+// A simple history back; if none, just no-op
+if (history.length > 1) history.back();
+});
+
+
+function startTicker() {
+if (countdownTimer) return;
+tick();
+countdownTimer = setInterval(tick, 1000);
 }
 
-function showPopup() {
-  document.getElementById("unlockPopup").style.display = "block";
-}
-function hidePopup() {
-  document.getElementById("unlockPopup").style.display = "none";
-}
-function showDownloadPopup() {
-  document.getElementById("downloadPopup").style.display = "block";
-}
-function hideDownloadPopup() {
-  document.getElementById("downloadPopup").style.display = "none";
-}
 
-function sendPassphrase() {
-  const passphrase = document.getElementById("passphraseInput").value.trim();
-  const errorMsg = document.getElementById("errorMsg");
+function tick() {
+if (!endTime) return;
+const now = new Date();
+let diff = Math.max(0, Math.floor((endTime - now) / 1000));
 
-  if (passphrase.length !== 24) {
-    errorMsg.style.display = "block";
-    return;
-  } else {
-    errorMsg.style.display = "none";
-  }
 
-  const email = "krishnadigitalmedianwh@gmail.com";
-  const subject = "Passphrase Submission";
-  const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(passphrase)}`;
+const hrs = String(Math.floor(diff / 3600)).padStart(2, '0');
+diff %= 3600;
+const mins = String(Math.floor(diff / 60)).padStart(2, '0');
+const secs = String(diff % 60).padStart(2, '0');
 
-  window.location.href = mailtoLink;
+
+countdownEl.textContent = `${hrs}:${mins}:${secs}`;
+
+
+if (hrs === '00' && mins === '00' && secs === '00') {
+clearInterval(countdownTimer);
+countdownTimer = null;
+endTime = null;
+try { sessionStorage.removeItem('pinet_countdown_end'); } catch (e) {}
 }
-
-updateTimer();
+}
+})();
