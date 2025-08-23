@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mainnet Unlocked</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="topbar">
+    <div class="left"><button class="back-btn">&lt;</button></div>
+    <div class="center">
+      <img src="https://ik.imagekit.io/pinet/Pi/Pi%20logo.png?updatedAt=1753683705173" alt="Pi logo" class="logo" />
+      <span class="home-text">Home</span>
+    </div>
+    <div class="right"></div>
+  </header>
+
+  <div class="app">
+    <main class="main">
+      <h2>Mainnet Unlocked</h2>
+      <img src="https://ik.imagekit.io/pinet/Pi/unlock.png?updatedAt=1753819802279" alt="Unlocked" class="unlock-icon" />
+      <p><strong>Time remaining:</strong> <span id="countdown">24:00:00</span></p>
+      <p><strong>Requirement:</strong> KYC successfully completed</p>
+      <p><strong>Remaining slots:</strong> 518 out of 31,415</p>
+    </main>
+  </div>
+
+  <script>
+    const countdownEl = document.getElementById("countdown");
+    const DURATION = 24 * 60 * 60; // 24h in seconds
+    let endTime = Date.now() + DURATION * 1000;
+
+    function tick() {
+      let diff = Math.max(0, Math.floor((endTime - Date.now()) / 1000));
+      let h = String(Math.floor(diff / 3600)).padStart(2, "0");
+      diff %= 3600;
+      let m = String(Math.floor(diff / 60)).padStart(2, "0");
+      let s = String(diff % 60).padStart(2, "0");
+      countdownEl.textContent = `${h}:${m}:${s}`;
+    }
+
+    setInterval(tick, 1000);
+    tick();
+  </script>
+</body>
+</html>
