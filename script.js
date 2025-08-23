@@ -10,7 +10,7 @@ function updateTimer() {
     if (totalSeconds <= 0) {
       clearInterval(interval);
       timerElement.innerText = "00:00:00";
-      popupTimerElement.innerText = "00:00:00";
+      if (popupTimerElement) popupTimerElement.innerText = "00:00:00";
       progressFill.style.width = "0%";
       return;
     }
@@ -23,7 +23,7 @@ function updateTimer() {
 
     const timeString = `${hrs.toString().padStart(2, "0")}:${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
     timerElement.innerText = timeString;
-    popupTimerElement.innerText = timeString;
+    if (popupTimerElement) popupTimerElement.innerText = timeString;
 
     let percent = (totalSeconds / totalInitial) * 100;
     progressFill.style.width = percent + "%";
