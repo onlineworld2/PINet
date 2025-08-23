@@ -4,28 +4,14 @@
   const countdownEl = document.getElementById('countdown');
   const backBtn = document.querySelector('.back-btn');
 
-  const DURATION = 24 * 60 * 60; // 24 hours in seconds
+  const DURATION = 24 * 60 * 60; // 24 hours
   let countdownTimer = null;
   let endTime = null;
-
-  try {
-    const savedEnd = sessionStorage.getItem('pinet_countdown_end');
-    if (savedEnd) {
-      endTime = new Date(parseInt(savedEnd, 10));
-      if (endTime > new Date()) {
-        panel.hidden = false;
-        startTicker();
-      } else {
-        sessionStorage.removeItem('pinet_countdown_end');
-      }
-    }
-  } catch (e) {}
 
   unlockBtn.addEventListener('click', () => {
     panel.hidden = false;
     if (!endTime) {
       endTime = new Date(Date.now() + DURATION * 1000);
-      try { sessionStorage.setItem('pinet_countdown_end', String(endTime.getTime())); } catch (e) {}
     }
     startTicker();
     unlockBtn.disabled = true;
@@ -58,7 +44,6 @@
       clearInterval(countdownTimer);
       countdownTimer = null;
       endTime = null;
-      try { sessionStorage.removeItem('pinet_countdown_end'); } catch (e) {}
     }
   }
 })();
